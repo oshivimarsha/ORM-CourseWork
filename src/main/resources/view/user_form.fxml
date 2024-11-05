@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="916.0" prefWidth="1300.0" style="-fx-background-color: #192a56;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UserFormController">
+   <children>
+      <Label layoutX="504.0" layoutY="14.0" text="User Form" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="50.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="48.0" layoutY="99.0" prefHeight="805.0" prefWidth="1204.0" style="-fx-background-color: white;">
+         <children>
+            <TableView layoutX="38.0" layoutY="527.0" prefHeight="266.0" prefWidth="1129.0">
+               <columns>
+                  <TableColumn prefWidth="171.0" text="User Id" />
+                  <TableColumn prefWidth="302.0" text="User Name" />
+                  <TableColumn prefWidth="329.0" text="Email" />
+                  <TableColumn prefWidth="326.0" text="Position" />
+               </columns>
+            </TableView>
+            <JFXButton layoutX="1015.0" layoutY="465.0" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="846.0" layoutY="465.0" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="677.0" layoutY="465.0" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: green;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="508.0" layoutY="465.0" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: blue;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <TextField layoutX="38.0" layoutY="465.0" prefHeight="43.0" prefWidth="322.0" promptText="Search NIC">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="316.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../icons8-search-100.png" />
+               </image>
+            </ImageView>
+            <TextField layoutX="220.0" layoutY="83.0" prefHeight="43.0" prefWidth="322.0" promptText="Course Id">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="220.0" layoutY="55.0" text="User Id :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="220.0" layoutY="325.0" text="Position :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField layoutX="220.0" layoutY="353.0" prefHeight="43.0" prefWidth="322.0" promptText="Fee (LKR)">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <TextField layoutX="220.0" layoutY="173.0" prefHeight="43.0" prefWidth="322.0" promptText="Enter Course Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="220.0" layoutY="145.0" text="User Name :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField layoutX="220.0" layoutY="263.0" prefHeight="43.0" prefWidth="322.0" promptText="Enter Duration">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="220.0" layoutY="235.0" text="Email :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField layoutX="662.0" layoutY="83.0" prefHeight="43.0" prefWidth="322.0" promptText="Enter Duration">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="662.0" layoutY="55.0" text="Password :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="739.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #192a56;" />
+            <JFXButton layoutX="739.0" layoutY="366.0" prefHeight="43.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #192a56;" text="Choose File">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

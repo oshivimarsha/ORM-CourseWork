@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="916.0" prefWidth="1300.0" style="-fx-background-color: #192a56;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
+   <children>
+      <Label layoutX="416.0" layoutY="14.0" text="Dashboard Form" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="50.0" />
+         </font>
+      </Label>
+      <Pane layoutX="45.0" layoutY="119.0" prefHeight="237.0" prefWidth="390.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="52.0" layoutY="28.0" prefHeight="41.0" prefWidth="287.0" text="Student Count">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="72.0" layoutY="111.0" prefHeight="47.0" prefWidth="79.0" text="10">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Label>
+            <Circle fill="#192a56" layoutX="256.0" layoutY="148.0" radius="61.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="130.0" fitWidth="131.0" layoutX="192.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-student-100(1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="455.0" layoutY="118.0" prefHeight="237.0" prefWidth="390.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="52.0" layoutY="28.0" prefHeight="41.0" prefWidth="287.0" text="Course Count">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="72.0" layoutY="111.0" prefHeight="47.0" prefWidth="79.0" text="10">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Label>
+            <Circle fill="#192a56" layoutX="256.0" layoutY="148.0" radius="61.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="130.0" fitWidth="122.0" layoutX="194.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-course-100(1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="865.0" layoutY="118.0" prefHeight="237.0" prefWidth="390.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="52.0" layoutY="28.0" prefHeight="41.0" prefWidth="287.0" text="Student Count">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="72.0" layoutY="111.0" prefHeight="47.0" prefWidth="79.0" text="10">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Label>
+            <Circle fill="#192a56" layoutX="256.0" layoutY="148.0" radius="61.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="122.0" fitWidth="122.0" layoutX="196.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-register-100.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="865.0" layoutY="375.0" prefHeight="515.0" prefWidth="390.0" style="-fx-background-color: white;">
+         <children>
+            <ScrollPane prefHeight="515.0" prefWidth="390.0">
+               <content>
+                  <GridPane prefHeight="513.0" prefWidth="391.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="390.0" minWidth="10.0" prefWidth="390.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="1.0" prefWidth="1.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Pane prefHeight="153.0" prefWidth="348.0" style="-fx-background-color: white;">
+                           <children>
+                              <Circle fill="#192a56" layoutX="67.0" layoutY="87.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="99.0" fitWidth="79.0" layoutX="28.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/icons8-student-100(1).png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="149.0" layoutY="26.0" prefHeight="16.0" prefWidth="188.0" text="User Id : 01">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="149.0" layoutY="56.0" prefHeight="16.0" prefWidth="188.0" text="User name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="149.0" layoutY="86.0" prefHeight="16.0" prefWidth="188.0" text="Position">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="149.0" layoutY="116.0" prefHeight="16.0" prefWidth="188.0" text="Email">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="153.0" prefWidth="348.0" GridPane.rowIndex="1">
+                           <children>
+                              <Circle fill="#192a56" layoutX="67.0" layoutY="87.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="99.0" fitWidth="79.0" layoutX="28.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/icons8-student-100(1).png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="149.0" layoutY="26.0" prefHeight="16.0" prefWidth="188.0" text="User Id : 01">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="149.0" layoutY="56.0" prefHeight="16.0" prefWidth="188.0" text="User name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="149.0" layoutY="86.0" prefHeight="16.0" prefWidth="188.0" style="-fx-border-color: balck;" text="Position">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="149.0" layoutY="116.0" prefHeight="16.0" prefWidth="188.0" text="Email">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="153.0" prefWidth="348.0" GridPane.rowIndex="2">
+                           <children>
+                              <Circle fill="#192a56" layoutX="67.0" layoutY="87.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="99.0" fitWidth="79.0" layoutX="28.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/icons8-student-100(1).png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="149.0" layoutY="26.0" prefHeight="16.0" prefWidth="188.0" text="User Id : 01">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="149.0" layoutY="56.0" prefHeight="16.0" prefWidth="188.0" text="User name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="149.0" layoutY="86.0" prefHeight="16.0" prefWidth="188.0" style="-fx-border-color: balck;" text="Position">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="149.0" layoutY="116.0" prefHeight="16.0" prefWidth="188.0" text="Email">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
