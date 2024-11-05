@@ -11,31 +11,44 @@ import java.util.ArrayList;
 
 
 public class StudentBOImpl implements StudentBO {
-    StudentDAO studentDAO = (StudentDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.STUDENTDAO);//new CustomerDAOImpl();
+    StudentDAO studentDAO = (StudentDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.STUDENTDAO);
 
 
     @Override
     public ArrayList<StudentDTO> getAllStudent() throws SQLException, ClassNotFoundException {
-        return null;
+        ArrayList<Student> students = (ArrayList<Student>) studentDAO.getAll();
+        ArrayList<StudentDTO> studentDTO = new ArrayList<>();
+
+        for (Student student: students){
+            studentDTO.add(new StudentDTO(student.getStudentId(), student.getStudentFullName(), student.getStudentEmail(), student.getStudentContact(),student.getStudentNIC(), student.getStudentAddress(), student.getStudentDOB(), student.getStudentAge(), student.getStudentGender(), student.getPath()));
+        }
+        return studentDTO;
     }
 
     @Override
     public boolean saveStudent(StudentDTO studentDTO) throws SQLException, ClassNotFoundException {
-        return studentDAO.save(new Student(studentDTO.getStudentId(), studentDTO.getStudentFullName(), studentDTO.getStudentEmail(), studentDTO.getStudentContact(),studentDTO.getStudentNIC(), studentDTO.getStudentAddress(), studentDTO.getStudentDOB().toString(), studentDTO.getStudentAge(), studentDTO.getStudentGender(), studentDTO.getStudentPath()));
+        return studentDAO.save(new Student(studentDTO.getStudentId(), studentDTO.getStudentFullName(), studentDTO.getStudentEmail(), studentDTO.getStudentContact(),studentDTO.getStudentNIC(), studentDTO.getStudentAddress(), studentDTO.getStudentDOB(), studentDTO.getStudentAge(), studentDTO.getStudentGender(), studentDTO.getStudentPath()));
     }
 
     @Override
-    public boolean updateStudent(StudentDTO dto) throws SQLException, ClassNotFoundException {
-        return false;
+    public boolean updateStudent(StudentDTO studentDTO) throws SQLException, ClassNotFoundException {
+        return studentDAO.update(new Student(studentDTO.getStudentId(), studentDTO.getStudentFullName(), studentDTO.getStudentEmail(), studentDTO.getStudentContact(),studentDTO.getStudentNIC(), studentDTO.getStudentAddress(), studentDTO.getStudentDOB(), studentDTO.getStudentAge(), studentDTO.getStudentGender(), studentDTO.getStudentPath()));
     }
 
     @Override
     public boolean deleteStudent(String id) throws SQLException, ClassNotFoundException {
-        return false;
+        return studentDAO.delete(id);
     }
 
     @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
         return studentDAO.generateNewID();
+    }
+
+    @Override
+    public StudentDTO searchStudent(String id) throws SQLException, ClassNotFoundException {
+        Student student =  (Student) studentDAO.search(id);
+        StudentDTO studentDTO = new StudentDTO(student.getStudentId(), student.getStudentFullName(), student.getStudentEmail(), student.getStudentContact(), student.getStudentNIC(), student.getStudentAddress(), student.getStudentDOB(), student.getStudentAge(), student.getStudentGender(), student.getPath());
+        return studentDTO;
     }
 }

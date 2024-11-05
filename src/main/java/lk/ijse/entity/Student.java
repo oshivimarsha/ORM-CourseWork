@@ -1,6 +1,7 @@
 package lk.ijse.entity;
 
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +15,7 @@ import java.util.Date;
 @Data
 @ToString
 
+@Entity
 public class Student {
     @Id
     private String studentId;
@@ -22,8 +24,8 @@ public class Student {
     private String studentContact;
     private String studentNIC;
     private String studentAddress;
-    private String studentDOB;
-    private String studentAgr;
+    private Date studentDOB;
+    private String studentAge;
     private String studentGender;
     private String path;
 }

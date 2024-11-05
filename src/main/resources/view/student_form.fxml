@@ -143,30 +143,30 @@
       </Label>
       <AnchorPane layoutX="48.0" layoutY="512.0" prefHeight="392.0" prefWidth="1204.0" style="-fx-background-color: white;">
          <children>
-            <TableView layoutX="38.0" layoutY="97.0" prefHeight="266.0" prefWidth="1129.0">
+            <TableView fx:id="tblStudentCart" layoutX="38.0" layoutY="97.0" prefHeight="266.0" prefWidth="1129.0">
               <columns>
-                <TableColumn text="Stu Id" />
-                <TableColumn prefWidth="167.0" text="Full Name" />
-                  <TableColumn prefWidth="137.0" text="Email" />
-                  <TableColumn prefWidth="135.0" text="Contact" />
-                  <TableColumn prefWidth="137.0" text="NIC" />
-                  <TableColumn prefWidth="136.0" text="Address" />
-                  <TableColumn prefWidth="150.0" text="DOB" />
-                  <TableColumn prefWidth="91.0" text="Age" />
-                  <TableColumn prefWidth="95.0" text="Gender" />
+                <TableColumn fx:id="colStudentId" text="Stu Id" />
+                <TableColumn fx:id="colStudentName" prefWidth="167.0" text="Full Name" />
+                  <TableColumn fx:id="colStudentEmail" prefWidth="137.0" text="Email" />
+                  <TableColumn fx:id="colStudentContact" prefWidth="135.0" text="Contact" />
+                  <TableColumn fx:id="colStudentNIC" prefWidth="137.0" text="NIC" />
+                  <TableColumn fx:id="colStudentAddress" prefWidth="136.0" text="Address" />
+                  <TableColumn fx:id="colStudentDOB" prefWidth="150.0" text="DOB" />
+                  <TableColumn fx:id="colStudentAge" prefWidth="91.0" text="Age" />
+                  <TableColumn fx:id="colStudentGender" prefWidth="95.0" text="Gender" />
               </columns>
             </TableView>
-            <JFXButton layoutX="1015.0" layoutY="35.0" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
+            <JFXButton fx:id="btnClear" layoutX="1015.0" layoutY="35.0" onAction="#btnClearOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="846.0" layoutY="35.0" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+            <JFXButton fx:id="btnDelete" layoutX="846.0" layoutY="35.0" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="677.0" layoutY="35.0" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: green;" text="Update" textFill="WHITE">
+            <JFXButton fx:id="btnUpdate" layoutX="677.0" layoutY="35.0" onAction="#btnUpdateOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: green;" text="Update" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
@@ -176,7 +176,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </JFXButton>
-            <TextField layoutX="38.0" layoutY="35.0" prefHeight="43.0" prefWidth="322.0" promptText="Search NIC">
+            <TextField fx:id="txtSearchHere" layoutX="38.0" layoutY="35.0" onAction="#txtSearchHereOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Search NIC">
                <font>
                   <Font size="18.0" />
                </font>

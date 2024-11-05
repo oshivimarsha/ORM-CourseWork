@@ -62,7 +62,7 @@
       </Pane>
       <Pane layoutX="865.0" layoutY="118.0" prefHeight="237.0" prefWidth="390.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="52.0" layoutY="28.0" prefHeight="41.0" prefWidth="287.0" text="Student Count">
+            <Label layoutX="52.0" layoutY="28.0" prefHeight="41.0" prefWidth="287.0" text="User Count">
                <font>
                   <Font name="System Bold" size="34.0" />
                </font>

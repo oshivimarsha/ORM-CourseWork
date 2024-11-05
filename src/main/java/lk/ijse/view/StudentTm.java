@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.Date;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -17,8 +19,8 @@ public class StudentTm {
     private String studentContact;
     private String studentNIC;
     private String studentAddress;
-    private String studentDOB;
-    private String studentAgr;
+    private Date studentDOB;
+    private String studentAge;
     private String studentGender;
     private String path;
 }
