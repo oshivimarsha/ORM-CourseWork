@@ -1,5 +1,6 @@
 package lk.ijse.dao;
 
+import lk.ijse.dao.custom.impl.CourseDAOImpl;
 import lk.ijse.dao.custom.impl.StudentDAOImpl;
 
 public class DAOFactory {
@@ -12,7 +13,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        STUDENTDAO
+        STUDENTDAO, COURSEDAO
     }
 
     public SuperDAO getDAO(DAOTypes daoTypes){
@@ -20,7 +21,9 @@ public class DAOFactory {
         switch (daoTypes){
 
             case STUDENTDAO:
-                return  new StudentDAOImpl();
+                return new StudentDAOImpl();
+            case COURSEDAO:
+                return new CourseDAOImpl();
             default:
                 return null;
         }
