@@ -28,26 +28,6 @@
                   <TableColumn fx:id="colCourseFee" prefWidth="290.0" text="Fee (LKR)" />
                </columns>
             </TableView>
-            <JFXButton layoutX="1015.0" layoutY="465.0" onAction="#btnClearOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="846.0" layoutY="465.0" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
-               <font>
-                  <Font name="System Bold Italic" size="20.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="677.0" layoutY="465.0" onAction="#btnUpdateOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: green;" text="Update" textFill="WHITE">
-               <font>
-                  <Font name="System Bold Italic" size="20.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="508.0" layoutY="465.0" onAction="#btnSaveOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: blue;" text="Save" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </JFXButton>
             <TextField layoutX="38.0" layoutY="465.0" prefHeight="43.0" prefWidth="322.0" promptText="Search NIC">
                <font>
                   <Font size="18.0" />
@@ -113,6 +93,54 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <JFXButton layoutX="1017.0" layoutY="460.0" onAction="#btnClearOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: orange;" text=" Clear" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-clear-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="848.0" layoutY="460.0" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-delete-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="672.0" layoutY="460.0" onAction="#btnUpdateOnAction" prefHeight="49.0" prefWidth="156.0" style="-fx-background-color: green;" text=" Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-update-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="503.0" layoutY="460.0" onAction="#btnSaveOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: blue;" text=" Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-save-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

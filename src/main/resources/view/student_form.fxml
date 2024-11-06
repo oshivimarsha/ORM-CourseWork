@@ -102,10 +102,17 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <JFXButton layoutX="943.0" layoutY="273.0" onAction="#btnChooseFile" prefHeight="43.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #192a56;" text="Choose File">
+            <JFXButton layoutX="943.0" layoutY="273.0" onAction="#btnChooseFile" prefHeight="43.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #192a56;" text=" Choose File">
                <font>
                   <Font size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-full-image-90(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
             <TextField fx:id="txtAge" layoutX="455.0" layoutY="330.0" prefHeight="43.0" prefWidth="91.0" promptText="Age">
                <font>
@@ -156,25 +163,53 @@
                   <TableColumn fx:id="colStudentGender" prefWidth="95.0" text="Gender" />
               </columns>
             </TableView>
-            <JFXButton fx:id="btnClear" layoutX="1015.0" layoutY="35.0" onAction="#btnClearOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
+            <JFXButton fx:id="btnClear" layoutX="1017.0" layoutY="35.0" onAction="#btnClearOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: orange;" text=" Clear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-clear-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnDelete" layoutX="846.0" layoutY="35.0" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+            <JFXButton fx:id="btnDelete" layoutX="848.0" layoutY="35.0" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-delete-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnUpdate" layoutX="677.0" layoutY="35.0" onAction="#btnUpdateOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: green;" text="Update" textFill="WHITE">
+            <JFXButton fx:id="btnUpdate" layoutX="672.0" layoutY="35.0" onAction="#btnUpdateOnAction" prefHeight="49.0" prefWidth="156.0" style="-fx-background-color: green;" text=" Update" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-update-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnSave" layoutX="508.0" layoutY="35.0" onAction="#btnSaveOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: blue;" text="Save" textFill="WHITE">
+            <JFXButton fx:id="btnSave" layoutX="503.0" layoutY="35.0" onAction="#btnSaveOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: blue;" text=" Save" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-save-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
             <TextField fx:id="txtSearchHere" layoutX="38.0" layoutY="35.0" onAction="#txtSearchHereOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Search NIC">
                <font>
