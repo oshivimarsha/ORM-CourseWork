@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import lk.ijse.bo.BOFactory;
@@ -250,7 +251,7 @@ public class StudentFormController {
 
 
     public void txtSearchHereOnAction(ActionEvent actionEvent) {
-        try {
+        /*try {
             String id = txtId.getText();
 
             StudentDTO student = studentBO.searchStudent(id);
@@ -273,6 +274,33 @@ public class StudentFormController {
         }catch (Exception e) {
             new Alert(Alert.AlertType.INFORMATION, "Student not found!").show();
             throw new RuntimeException(e);
+        }*/
+    }
+
+    public void rowOnMouseClicked(ContextMenuEvent contextMenuEvent) {
+        String id = tblStudentCart.getSelectionModel().getSelectedItem().getStudentId();
+
+        try {
+            StudentDTO studentDTO = studentBO.searchStudent(id);//searchProductId(id);
+            if (studentDTO != null) {
+                txtId.setText(studentDTO.getStudentId());
+                txtFullName.setText(studentDTO.getStudentFullName());
+                txtEmail.setText(studentDTO.getStudentEmail());
+                txtContact.setText(studentDTO.getStudentContact());
+                txtNIC.setText(studentDTO.getStudentNIC());
+                txtAddress.setText(studentDTO.getStudentAddress());
+                txtDOB.setValue(LocalDate.parse(studentDTO.getStudentDOB().toString()));
+                txtAge.setText(studentDTO.getStudentAge());
+                cmbGender.setValue(studentDTO.getStudentGender());
+                Image image = new Image(studentDTO.getStudentPath());
+                imageView.setImage(image);
+
+
+            } else {
+                new Alert(Alert.AlertType.INFORMATION, "student not found!").show();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
 }

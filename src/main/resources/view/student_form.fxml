@@ -150,7 +150,7 @@
       </Label>
       <AnchorPane layoutX="48.0" layoutY="512.0" prefHeight="392.0" prefWidth="1204.0" style="-fx-background-color: white;">
          <children>
-            <TableView fx:id="tblStudentCart" layoutX="38.0" layoutY="97.0" prefHeight="266.0" prefWidth="1129.0">
+            <TableView fx:id="tblStudentCart" layoutX="38.0" layoutY="97.0" onContextMenuRequested="#rowOnMouseClicked" prefHeight="266.0" prefWidth="1129.0">
               <columns>
                 <TableColumn fx:id="colStudentId" text="Stu Id" />
                 <TableColumn fx:id="colStudentName" prefWidth="167.0" text="Full Name" />

@@ -112,7 +112,7 @@ public class StudentDAOImpl implements StudentDAO {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        NativeQuery query = session.createNativeQuery("select * from Student where studentId = ?1");
+        NativeQuery query = session.createNativeQuery("from Student where studentId = ?1");
         query.addEntity(Student.class);
         query.setParameter(1, id);
 

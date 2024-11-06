@@ -48,7 +48,6 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public StudentDTO searchStudent(String id) throws SQLException, ClassNotFoundException {
         Student student =  (Student) studentDAO.search(id);
-        StudentDTO studentDTO = new StudentDTO(student.getStudentId(), student.getStudentFullName(), student.getStudentEmail(), student.getStudentContact(), student.getStudentNIC(), student.getStudentAddress(), student.getStudentDOB(), student.getStudentAge(), student.getStudentGender(), student.getPath());
-        return studentDTO;
+        return new StudentDTO(student.getStudentId(), student.getStudentFullName(), student.getStudentEmail(), student.getStudentContact(), student.getStudentNIC(), student.getStudentAddress(), student.getStudentDOB(), student.getStudentAge(), student.getStudentGender(), student.getPath());
     }
 }
