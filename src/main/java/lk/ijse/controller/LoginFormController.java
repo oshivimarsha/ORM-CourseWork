@@ -55,6 +55,17 @@ public class LoginFormController {
         stage.centerOnScreen();
         stage.setTitle("SignUp Form");
     }
+
+    public void linkUpdateOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/update_form.fxml"));
+
+        Scene scene = new Scene(rootNode);
+
+        Stage stage = (Stage) this.rootNode.getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.setTitle("Update Username Password Form");
+    }
 }
 
 
