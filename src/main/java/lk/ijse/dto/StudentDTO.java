@@ -23,15 +23,4 @@ public class StudentDTO {
     private String studentAge;
     private String studentGender;
     private String studentPath;
-
-    /*public StudentDTO(String studentId, String studentFullName, String studentEmail, String studentContact, String studentNIC, String studentAddress, String studentDOB, String studentAge) {
-        this.studentId = studentId;
-        this.studentFullName = studentFullName;
-        this.studentEmail = studentEmail;
-        this.studentContact = studentContact;
-        this.studentNIC = studentNIC;
-        this.studentAddress = studentAddress;
-        this.studentDOB = studentDOB;
-        this.studentAge = studentAge;
-    }*/
 }

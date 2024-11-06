@@ -4,6 +4,9 @@ import lk.ijse.dao.CrudDAO;
 import lk.ijse.dao.SuperDAO;
 import lk.ijse.entity.Student;
 
-public interface StudentDAO extends CrudDAO<Student> {
+import java.sql.SQLException;
+import java.util.List;
 
+public interface StudentDAO extends CrudDAO<Student> {
+    List<Student> getAll() throws SQLException, ClassNotFoundException;
 }

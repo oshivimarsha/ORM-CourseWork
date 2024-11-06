@@ -54,7 +54,7 @@ public class StudentFormController {
     StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENTBO);
 
     public void initialize() {
-        loadAllEmployees();
+        loadAllStudents();
         setCellValueFactory();
         getCurrentId();
 
@@ -62,7 +62,7 @@ public class StudentFormController {
         cmbGender.setItems(list);
     }
 
-    private void loadAllEmployees() {
+    private void loadAllStudents() {
         ObservableList<StudentTm> obList = FXCollections.observableArrayList();
 
         try {
@@ -139,9 +139,9 @@ public class StudentFormController {
             String contact = txtContact.getText();
             String nic = txtNIC.getText();
             String address = txtAddress.getText();
-            java.sql.Date dob = Date.valueOf(txtDOB.getValue());
+            Date dob = Date.valueOf((txtDOB.getValue()));
             String age = txtAge.getText();
-            String gender = (String) cmbGender.getValue();
+            String gender = cmbGender.getValue();
             String path = image.getUrl();
 
             StudentDTO student = new StudentDTO(id, name, email, contact, nic, address, dob, age, gender, path);
