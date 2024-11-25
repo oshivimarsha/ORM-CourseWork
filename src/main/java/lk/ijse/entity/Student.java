@@ -7,7 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,4 +29,7 @@ public class Student {
     private String studentAge;
     private String studentGender;
     private String path;
+
+  //  @OneToMany(mappedBy = "student")
+ //   List<Rejister> registrationList = new ArrayList<>();
 }

@@ -14,7 +14,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        STUDENTDAO, COURSEDAO, USERDAO
+        STUDENTDAO, COURSEDAO, USERDAO, DASHBOARDDAO
     }
 
     public SuperDAO getDAO(DAOTypes daoTypes){

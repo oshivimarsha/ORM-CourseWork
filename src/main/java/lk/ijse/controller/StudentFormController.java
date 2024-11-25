@@ -108,23 +108,34 @@ public class StudentFormController {
     }
 
     public void cmbGenderOnAction(ActionEvent actionEvent) {
-        String s = cmbGender.getSelectionModel().getSelectedItem().toString();
+        String s = cmbGender.getSelectionModel().getSelectedItem();
     }
 
 
 
-    private String getCurrentId() {
-        String nextId = "";
-
+    private void getCurrentId() {
         try {
+            String currentId = studentBO.generateNewID();
+            String nextOrderId = generateNextOrderId(currentId);
+            txtId.setText(nextOrderId);
 
-            nextId = studentBO.generateNewID();
-            txtId.setText(nextId);
-
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        return nextId;
+
+
+    }
+
+    private String generateNextOrderId(String currentId) {
+        if(currentId != null) {
+            /*String[] split = currentId.split("S-");  //" ", "2"
+            int idNum = Integer.parseInt(split[1]);*/
+            int idNum = Integer.parseInt(currentId);
+            return "Stu-0" + ++idNum;
+        }
+        return "Stu-01";
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
@@ -140,7 +151,7 @@ public class StudentFormController {
             String contact = txtContact.getText();
             String nic = txtNIC.getText();
             String address = txtAddress.getText();
-            Date dob = Date.valueOf((txtDOB.getValue()));
+            Date dob = Date.valueOf(txtDOB.getValue());
             String age = txtAge.getText();
             String gender = cmbGender.getValue();
             String path = image.getUrl();
@@ -149,8 +160,11 @@ public class StudentFormController {
 
             try {
                 boolean isSaved = studentBO.saveStudent(student);//CustomerRepo.save(customer);
+                System.out.println("1");
                 if (isSaved) {
+                    System.out.println("2");
                     new Alert(Alert.AlertType.CONFIRMATION, "student saved!").show();
+                    System.out.println("3");
                     clearFields();
                     initialize();
                 }
@@ -191,7 +205,7 @@ public class StudentFormController {
             String address = txtAddress.getText();
             java.sql.Date dob = Date.valueOf(txtDOB.getValue());
             String age = txtAge.getText();
-            String gender = (String) cmbGender.getValue();
+            String gender = cmbGender.getValue();
             String path = image.getUrl();
 
             StudentDTO student = new StudentDTO(id, name, email, contact, nic, address, dob, age, gender, path);

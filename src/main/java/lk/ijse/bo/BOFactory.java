@@ -1,6 +1,7 @@
 package lk.ijse.bo;
 
 import lk.ijse.bo.custom.impl.CourseBOImpl;
+import lk.ijse.bo.custom.impl.DashboardBOImpl;
 import lk.ijse.bo.custom.impl.StudentBOImpl;
 import lk.ijse.bo.custom.impl.UserBOImpl;
 
@@ -14,7 +15,7 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        STUDENTBO, COURSEBO, USERBO
+        STUDENTBO, COURSEBO, USERBO, REJISTERBO, DASHBOARDBO
     }
 
     public SuperBO getBO (BOTypes boTypes) {
@@ -25,6 +26,8 @@ public class BOFactory {
                 return new CourseBOImpl();
             case USERBO:
                 return new UserBOImpl();
+            case DASHBOARDBO:
+                return new DashboardBOImpl();
             default:
                 return null;
         }

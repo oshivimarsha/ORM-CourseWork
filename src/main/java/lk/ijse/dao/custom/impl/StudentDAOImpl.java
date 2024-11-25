@@ -7,6 +7,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,20 @@ public class StudentDAOImpl implements StudentDAO {
 
         return students;
     }
+
+    /*@Override
+    public int getStudentCount() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT COUNT(*) AS studentCount FROM Student";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if(resultSet.next()) {
+            return resultSet.getInt("customerCount");
+        }
+        return 0;
+    }*/
 
     @Override
     public boolean save(Student student) throws SQLException, ClassNotFoundException {
