@@ -1,6 +1,6 @@
 package lk.ijse.dao;
 
-import lk.ijse.dao.custom.impl.CourseDAOImpl;
+import lk.ijse.dao.custom.impl.ProgramDAOImpl;
 import lk.ijse.dao.custom.impl.RegisterDAOImpl;
 import lk.ijse.dao.custom.impl.StudentDAOImpl;
 import lk.ijse.dao.custom.impl.UserDAOImpl;
@@ -15,7 +15,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        STUDENTDAO, COURSEDAO, USERDAO, DASHBOARDDAO, REGISTERDAO
+        STUDENTDAO, PROGRAMDAO, USERDAO, DASHBOARDDAO, REGISTERDAO
     }
 
     public SuperDAO getDAO(DAOTypes daoTypes){
@@ -24,8 +24,8 @@ public class DAOFactory {
 
             case STUDENTDAO:
                 return new StudentDAOImpl();
-            case COURSEDAO:
-                return new CourseDAOImpl();
+            case PROGRAMDAO:
+                return new ProgramDAOImpl();
             case USERDAO:
                 return new UserDAOImpl();
             case REGISTERDAO:

@@ -12,15 +12,15 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        STUDENTBO, COURSEBO, USERBO, REJISTERBO, DASHBOARDBO
+        STUDENTBO, PROGRAMBO, USERBO, REJISTERBO, DASHBOARDBO
     }
 
     public SuperBO getBO (BOTypes boTypes) {
         switch (boTypes) {
             case STUDENTBO:
                 return new StudentBOImpl();
-            case COURSEBO:
-                return new CourseBOImpl();
+            case PROGRAMBO:
+                return new ProgramBOImpl();
             case USERBO:
                 return new UserBOImpl();
             case DASHBOARDBO:

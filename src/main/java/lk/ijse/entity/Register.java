@@ -26,13 +26,13 @@ public class Register {
     private Student student;
 
     @ManyToOne
-    private Course course;
+    private Program course;
 
     private LocalDate date;
     private double payment;
     private double amountPay;
 
-    public Register(Student student, Course program, LocalDate date, double payment, double amountPay) {
+    public Register(Student student, Program program, LocalDate date, double payment, double amountPay) {
         this.student = student;
         this.course = program;
         this.date = date;

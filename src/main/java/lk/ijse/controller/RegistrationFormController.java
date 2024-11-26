@@ -10,10 +10,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.bo.BOFactory;
-import lk.ijse.bo.custom.CourseBO;
+import lk.ijse.bo.custom.ProgramBO;
 import lk.ijse.bo.custom.RegisterBO;
 import lk.ijse.bo.custom.StudentBO;
-import lk.ijse.dto.CourseDTO;
+import lk.ijse.dto.ProgramDTO;
 import lk.ijse.dto.StudentDTO;
 import lk.ijse.view.CartTm;
 
@@ -30,25 +30,25 @@ public class RegistrationFormController {
     public TextField txtStudentTel;
     public Label lblDate;
     public Label lblTime;
-    public JFXComboBox<String> cmbCourseNames;
+    public JFXComboBox<String> cmbProgramNames;
     public Label lblRegisterId;
-    public TextField txtCourseId;
-    public Label lblCourseFee;
+    public TextField txtProgramId;
+    public Label lblProgramFee;
     public TextField txtPayment;
-    public TableColumn<?,?> colCourseId;
-    public TableColumn<?,?> colCourseName;
-    public TableColumn<?,?> colCourseFee;
+    public TableColumn<?,?> colProgramId;
+    public TableColumn<?,?> colProgramName;
+    public TableColumn<?,?> colProgramFee;
     public TableColumn<?,?> colAmount;
     public TableColumn<?,?> colPay;
     public TableView<CartTm> tblRegistrationCart;
 
     StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENTBO);
-    CourseBO courseBO = (CourseBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.COURSEBO);
+    ProgramBO programBO = (ProgramBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.PROGRAMBO);
     RegisterBO registerBO = (RegisterBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.REJISTERBO);
     ObservableList<CartTm> obList = FXCollections.observableArrayList();
 
     public void initialize() {
-        getCourseNames();
+        getProgramNames();
         setCellValueFactory();
         getCurrentRegisterId();
         setDate();
@@ -56,9 +56,9 @@ public class RegistrationFormController {
     }
 
     private void setCellValueFactory() {
-        colCourseId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        colCourseName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colCourseFee.setCellValueFactory(new PropertyValueFactory<>("fee"));
+        colProgramId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colProgramName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colProgramFee.setCellValueFactory(new PropertyValueFactory<>("fee"));
         colAmount.setCellValueFactory(new PropertyValueFactory<>("payment"));
         colPay.setCellValueFactory(new PropertyValueFactory<>("pay"));
     }
@@ -83,19 +83,19 @@ public class RegistrationFormController {
         return "Reg-01";
     }
 
-    private void getCourseNames() {
+    private void getProgramNames() {
         ObservableList<String> obList = FXCollections.observableArrayList();
         try {
-            List<CourseDTO> courseList = courseBO.getAllCourse();
-            List<String> courseNameList = new ArrayList<>();
+            List<ProgramDTO> programList = programBO.getAllProgram();
+            List<String> programNameList = new ArrayList<>();
 
-            for (CourseDTO courseDTO : courseList){
-                courseNameList.add(courseDTO.getCourseName());
+            for (ProgramDTO programDTO : programList){
+                programNameList.add(programDTO.getProgramName());
             }
-            for (String name: courseNameList) {
+            for (String name: programNameList) {
                 obList.add(name);
             }
-            cmbCourseNames.setItems(obList);
+            cmbProgramNames.setItems(obList);
 
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
@@ -113,7 +113,7 @@ public class RegistrationFormController {
 
 
             }else{
-                cmbCourseNames.requestFocus();
+                cmbProgramNames.requestFocus();
                 new Alert(Alert.AlertType.INFORMATION, "student not found!").show();
             }
 
@@ -127,11 +127,11 @@ public class RegistrationFormController {
 
     }
 
-    public void txtCourseIdOnAction(ActionEvent actionEvent) {
+    public void txtProgramIdOnAction(ActionEvent actionEvent) {
 
     }
 
-    public void txtCourseNameOnAction(ActionEvent actionEvent) {
+    public void txtProgramNameOnAction(ActionEvent actionEvent) {
 
     }
 
@@ -145,13 +145,13 @@ public class RegistrationFormController {
         lblTime.setText(String.valueOf(now));
     }
 
-    public void cmbCourseNameOnAction(ActionEvent actionEvent) {
-        String name = cmbCourseNames.getValue();
+    public void cmbProgramNameOnAction(ActionEvent actionEvent) {
+        String name = cmbProgramNames.getValue();
         try {
-            CourseDTO course = courseBO.searchCourseByName(name);
-            if (course != null) {
-                txtCourseId.setText(course.getCourseId());
-                lblCourseFee.setText(String.valueOf(course.getCourseFee()));
+            ProgramDTO program = programBO.searchProgramByName(name);
+            if (program != null) {
+                txtProgramId.setText(program.getProgramId());
+                lblProgramFee.setText(String.valueOf(program.getProgramFee()));
                 txtPayment.requestFocus();
             }
 
@@ -163,14 +163,14 @@ public class RegistrationFormController {
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {
-        String cId = txtCourseId.getText();
-        String cName = cmbCourseNames.getValue();
-        double fee = Double.parseDouble(lblCourseFee.getText());
+        String pId = txtProgramId.getText();
+        String pName = cmbProgramNames.getValue();
+        double fee = Double.parseDouble(lblProgramFee.getText());
         double payment = Double.parseDouble(txtPayment.getText());
         double pay = fee - payment;
 
 
-        CartTm tm = new CartTm(cId, cName, fee, payment, pay);
+        CartTm tm = new CartTm(pId, pName, fee, payment, pay);
         obList.add(tm);
         tblRegistrationCart.setItems(obList);
     }

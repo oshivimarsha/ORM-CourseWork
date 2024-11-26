@@ -53,15 +53,15 @@ public class SidepannelController {
     }
 
     public void btnCourse(ActionEvent actionEvent) throws IOException {
-        AnchorPane coursePane = FXMLLoader.load(this.getClass().getResource("/view/course_form.fxml"));
+        AnchorPane coursePane = FXMLLoader.load(this.getClass().getResource("/view/program_form.fxml"));
         childRootNode.getChildren().clear();
         childRootNode.getChildren().add(coursePane);
     }
 
     public void btnRejister(ActionEvent actionEvent) throws IOException {
-        AnchorPane rejisterPane = FXMLLoader.load(this.getClass().getResource("/view/registration_form.fxml"));
+        AnchorPane registerPane = FXMLLoader.load(this.getClass().getResource("/view/registration_form.fxml"));
         childRootNode.getChildren().clear();
-        childRootNode.getChildren().add(rejisterPane);
+        childRootNode.getChildren().add(registerPane);
     }
 
     public void btnUser(ActionEvent actionEvent) throws IOException {

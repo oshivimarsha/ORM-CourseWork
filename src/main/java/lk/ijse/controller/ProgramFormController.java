@@ -9,69 +9,65 @@ import javafx.scene.control.*;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.bo.BOFactory;
-import lk.ijse.bo.custom.CourseBO;
-import lk.ijse.dto.CourseDTO;
-import lk.ijse.dto.StudentDTO;
-import lk.ijse.view.CourseTm;
-import lk.ijse.view.StudentTm;
+import lk.ijse.bo.custom.ProgramBO;
+import lk.ijse.dto.ProgramDTO;
+import lk.ijse.view.ProgramTm;
 
-import java.awt.*;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-public class CourseFormController {
+public class ProgramFormController {
     @FXML
-    public TableView<CourseTm> tblCourseCart;
+    public TableView<ProgramTm> tblProgramCart;
     @FXML
-    public TableColumn<?, ?> colCourseId;
+    public TableColumn<?, ?> colProgramId;
     @FXML
-    public TableColumn<?, ?> colCourseName;
+    public TableColumn<?, ?> colProgramName;
     @FXML
-    public TableColumn<?, ?> colCourseDuration;
+    public TableColumn<?, ?> colProgramDuration;
     @FXML
-    public TableColumn<?, ?> colCourseFee;
+    public TableColumn<?, ?> colProgramFee;
 
     @FXML
-    private TextField txtCourseDuration;
+    private TextField txtProgramDuration;
 
     @FXML
-    private TextField txtCourseFee;
+    private TextField txtProgramFee;
 
     @FXML
-    private TextField txtCourseId;
+    private TextField txtProgramId;
 
     @FXML
-    private TextField txtCourseName;
+    private TextField txtProgramName;
 
 
-    CourseBO courseBO = (CourseBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.COURSEBO);
+    ProgramBO programBO = (ProgramBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.PROGRAMBO);
 
     public void initialize() {
-        loadAllCourse();
+        loadAllProgram();
         setCellValueFactory();
        // getCurrentId();
 
     }
 
-    private void loadAllCourse() {
-        ObservableList<CourseTm> obList = FXCollections.observableArrayList();
+    private void loadAllProgram() {
+        ObservableList<ProgramTm> obList = FXCollections.observableArrayList();
 
         try {
-            List<CourseDTO> courseList = courseBO.getAllCourse();
-            for (CourseDTO course : courseList) {
-                CourseTm tm = new CourseTm(
-                        course.getCourseId(),
-                        course.getCourseName(),
-                        course.getCourseDuration(),
-                        course.getCourseFee()
+            List<ProgramDTO> programList = programBO.getAllProgram();
+            for (ProgramDTO program : programList) {
+                ProgramTm tm = new ProgramTm(
+                        program.getProgramId(),
+                        program.getProgramName(),
+                        program.getProgramDuration(),
+                        program.getProgramFee()
                 );
 
                 obList.add(tm);
             }
 
-            tblCourseCart.setItems(obList);
+            tblProgramCart.setItems(obList);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
@@ -80,10 +76,10 @@ public class CourseFormController {
     }
 
     private void setCellValueFactory() {
-        colCourseId.setCellValueFactory(new PropertyValueFactory<>("courseId"));
-        colCourseName.setCellValueFactory(new PropertyValueFactory<>("courseName"));
-        colCourseDuration.setCellValueFactory(new PropertyValueFactory<>("courseDuration"));
-        colCourseFee.setCellValueFactory(new PropertyValueFactory<>("courseFee"));
+        colProgramId.setCellValueFactory(new PropertyValueFactory<>("programId"));
+        colProgramName.setCellValueFactory(new PropertyValueFactory<>("programName"));
+        colProgramDuration.setCellValueFactory(new PropertyValueFactory<>("programDuration"));
+        colProgramFee.setCellValueFactory(new PropertyValueFactory<>("programFee"));
     }
 
     @FXML
@@ -95,24 +91,24 @@ public class CourseFormController {
         Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to Save Course?", yes, no).showAndWait();
 
         if (type.orElse(no) == yes) {
-        String cId = txtCourseId.getText();
-        String cName = txtCourseName.getText();
-        String cDuration = txtCourseDuration.getText();
-        String cFee = txtCourseFee.getText();
+        String pId = txtProgramId.getText();
+        String pName = txtProgramName.getText();
+        String pDuration = txtProgramDuration.getText();
+        String pFee = txtProgramFee.getText();
 
             System.out.println("2");
 
 
-            CourseDTO course = new CourseDTO(cId, cName, cDuration, cFee);
+            ProgramDTO program = new ProgramDTO(pId, pName, pDuration, pFee);
             System.out.println("3");
 
             try {
                 System.out.println("10");
-                boolean isSaved = courseBO.saveCourse(course);
+                boolean isSaved = programBO.saveProgram(program);
                 System.out.println("4");
                 if (isSaved) {
                     System.out.println("5");
-                    new Alert(Alert.AlertType.CONFIRMATION, "course saved!").show();
+                    new Alert(Alert.AlertType.CONFIRMATION, "program saved!").show();
                     System.out.println("6");
                     clearFields();
                     initialize();
@@ -131,20 +127,20 @@ public class CourseFormController {
         ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
         ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-        Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to Update Course?", yes, no).showAndWait();
+        Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to Update Program?", yes, no).showAndWait();
 
         if (type.orElse(no) == yes) {
-            String cId = txtCourseId.getText();
-            String cName = txtCourseName.getText();
-            String cDuration = txtCourseDuration.getText();
-            String cFee = txtCourseFee.getText();
+            String pId = txtProgramId.getText();
+            String pName = txtProgramName.getText();
+            String pDuration = txtProgramDuration.getText();
+            String pFee = txtProgramFee.getText();
 
-            CourseDTO course = new CourseDTO(cId, cName, cDuration, cFee);
+            ProgramDTO program = new ProgramDTO(pId, pName, pDuration, pFee);
 
             try {
-                boolean isUpdated = courseBO.updateCourse(course);
+                boolean isUpdated = programBO.updateProgram(program);
                 if (isUpdated) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "course updated!").show();
+                    new Alert(Alert.AlertType.CONFIRMATION, "program updated!").show();
                     clearFields();
                     initialize();
                 } else {
@@ -157,10 +153,10 @@ public class CourseFormController {
     }
 
     public void clearFields() {
-        txtCourseId.setText("");
-        txtCourseName.setText("");
-        txtCourseDuration.setText("");
-        txtCourseFee.setText("");
+        txtProgramId.setText("");
+        txtProgramName.setText("");
+        txtProgramDuration.setText("");
+        txtProgramFee.setText("");
     }
 
     @FXML
@@ -173,15 +169,15 @@ public class CourseFormController {
         ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
         ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-        Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to Delete Course?", yes, no).showAndWait();
+        Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to Delete program?", yes, no).showAndWait();
 
         if (type.orElse(no) == yes) {
-            String id = txtCourseId.getText();
+            String id = txtProgramId.getText();
 
             try {
-                boolean isDeleted = courseBO.deleteCourse(id);
+                boolean isDeleted = programBO.deleteProgram(id);
                 if (isDeleted) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "course deleted!").show();
+                    new Alert(Alert.AlertType.CONFIRMATION, "program deleted!").show();
                     clearFields();
                     initialize();
                 }
@@ -192,22 +188,22 @@ public class CourseFormController {
     }
 
     @FXML
-    void txtCourseDurationOnAction(ActionEvent event) {
+    void txtProgramDurationOnAction(ActionEvent event) {
 
     }
 
     @FXML
-    void txtCourseFeeOnAction(ActionEvent event) {
+    void txtProgramFeeOnAction(ActionEvent event) {
 
     }
 
     @FXML
-    void txtCourseIdOnAction(ActionEvent event) {
+    void txtProgramIdOnAction(ActionEvent event) {
 
     }
 
     @FXML
-    void txtCourseNameOnAction(ActionEvent event) {
+    void txtProgramNameOnAction(ActionEvent event) {
 
     }
 }

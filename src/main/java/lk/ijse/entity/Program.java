@@ -13,10 +13,10 @@ import lombok.ToString;
 @ToString
 
 @Entity
-public class Course {
+public class Program {
     @Id
-    private String courseId;
-    private String courseName;
-    private String courseDuration;
-    private String courseFee;
+    private String programId;
+    private String programName;
+    private String programDuration;
+    private String programFee;
 }

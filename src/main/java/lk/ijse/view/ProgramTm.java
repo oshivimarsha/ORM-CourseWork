@@ -10,9 +10,9 @@ import lombok.ToString;
 @Data
 @ToString
 
-public class CourseTm {
-    private String courseId;
-    private String courseName;
-    private String courseDuration;
-    private String courseFee;
+public class ProgramTm {
+    private String programId;
+    private String programName;
+    private String programDuration;
+    private String programFee;
 }

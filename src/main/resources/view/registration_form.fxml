@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="916.0" prefWidth="1300.0" style="-fx-background-color: #192a56;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RegistrationFormController">
    <children>
       <Label layoutX="471.0" layoutY="14.0" text="Course Form" textFill="WHITE">
@@ -89,12 +88,12 @@
       </AnchorPane>
       <AnchorPane layoutX="815.0" layoutY="99.0" prefHeight="500.0" prefWidth="455.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="67.0" layoutY="38.0" text="Course Name">
+            <Label layoutX="67.0" layoutY="38.0" text="Program Name">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCourseId" layoutX="67.0" layoutY="165.0" prefHeight="43.0" prefWidth="322.0" promptText="Enter Student Id">
+            <TextField fx:id="txtProgramId" layoutX="67.0" layoutY="165.0" prefHeight="43.0" prefWidth="322.0" promptText="Enter Student Id">
                <font>
                   <Font size="18.0" />
                </font>
@@ -102,18 +101,18 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <Label layoutX="67.0" layoutY="137.0" text="Course Id :">
+            <Label layoutX="67.0" layoutY="137.0" text="Program Id :">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="67.0" layoutY="236.0" text="Course Fee (Rs.) :">
+            <Label layoutX="67.0" layoutY="236.0" text="Program Fee (Rs.) :">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <JFXComboBox fx:id="cmbCourseNames" layoutX="67.0" layoutY="66.0" onAction="#cmbCourseNameOnAction" prefHeight="43.0" prefWidth="322.0" />
-            <Label fx:id="lblCourseFee" layoutX="237.0" layoutY="230.0" prefHeight="34.0" prefWidth="150.0" text="  40000">
+            <JFXComboBox fx:id="cmbProgramNames" layoutX="67.0" layoutY="66.0" onAction="#cmbProgramNameOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Select Program" />
+            <Label fx:id="lblProgramFee" layoutX="237.0" layoutY="230.0" prefHeight="34.0" prefWidth="150.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -140,11 +139,11 @@
       </AnchorPane>
       <TableView fx:id="tblRegistrationCart" layoutX="27.0" layoutY="612.0" prefHeight="193.0" prefWidth="1245.0">
          <columns>
-            <TableColumn fx:id="colCourseId" prefWidth="179.0" text="Course Id" />
-            <TableColumn fx:id="colCourseName" prefWidth="316.0" text="Course Name" />
-            <TableColumn fx:id="colCourseFee" prefWidth="223.0" text="Fee (LKR)" />
+            <TableColumn fx:id="colProgramId" prefWidth="179.0" text="Program Id" />
+            <TableColumn fx:id="colProgramName" prefWidth="316.0" text="Program Name" />
+            <TableColumn fx:id="colProgramFee" prefWidth="223.0" text="Fee (LKR)" />
             <TableColumn fx:id="colAmount" prefWidth="247.0" text="Amount" />
-            <TableColumn fx:id="colPay" prefWidth="247.0" text="Amount" />
+            <TableColumn fx:id="colPay" prefWidth="247.0" text="Pay" />
          </columns>
       </TableView>
    </children>

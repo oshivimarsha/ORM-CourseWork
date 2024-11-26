@@ -6,7 +6,7 @@ import lk.ijse.config.FactoryConfiguration;
 import lk.ijse.dao.DAOFactory;
 import lk.ijse.dao.custom.RegisterDAO;
 import lk.ijse.dto.RegisterDTO;
-import lk.ijse.entity.Course;
+import lk.ijse.entity.Program;
 import lk.ijse.entity.Register;
 import lk.ijse.entity.Student;
 import org.hibernate.Session;
@@ -30,8 +30,8 @@ public class RegisterBOImpl implements RegisterBO {
                 Student student = new Student();
                 student.setStudentId(registerDTO.getStuId());
 
-                Course course = new Course();
-                course.setCourseId(registerDTO.getCouId());
+                Program course = new Program();
+                course.setProgramId(registerDTO.getCouId());
 
                 Register register = new Register(/*registrationDTO.getRid(),*/student,course,registerDTO.getDate(),registerDTO.getPayment(),registerDTO.getAmountPay());
                 registerList.add(register);

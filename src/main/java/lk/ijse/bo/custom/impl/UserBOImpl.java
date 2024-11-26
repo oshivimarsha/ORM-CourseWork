@@ -3,10 +3,8 @@ package lk.ijse.bo.custom.impl;
 import lk.ijse.bo.custom.UserBO;
 import lk.ijse.dao.DAOFactory;
 import lk.ijse.dao.custom.UserDAO;
-import lk.ijse.dto.CourseDTO;
 import lk.ijse.dto.StudentDTO;
 import lk.ijse.dto.UserDTO;
-import lk.ijse.entity.Course;
 import lk.ijse.entity.User;
 
 import java.sql.SQLException;

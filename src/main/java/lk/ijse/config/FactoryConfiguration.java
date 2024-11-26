@@ -1,7 +1,7 @@
 package lk.ijse.config;
 
 
-import lk.ijse.entity.Course;
+import lk.ijse.entity.Program;
 import lk.ijse.entity.Register;
 import lk.ijse.entity.Student;
 import lk.ijse.entity.User;
@@ -15,7 +15,7 @@ public class FactoryConfiguration {
 
     private FactoryConfiguration(){
         Configuration config = new Configuration().configure().addAnnotatedClass(Student.class)
-                .addAnnotatedClass(Course.class)
+                .addAnnotatedClass(Program.class)
                 .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Register.class);
 

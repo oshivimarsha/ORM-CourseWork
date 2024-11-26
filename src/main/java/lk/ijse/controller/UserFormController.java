@@ -13,13 +13,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.UserBO;
-import lk.ijse.dto.CourseDTO;
-import lk.ijse.dto.StudentDTO;
 import lk.ijse.dto.UserDTO;
 import lk.ijse.view.UserTm;
 
 import java.io.File;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;

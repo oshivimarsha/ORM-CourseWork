@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="916.0" prefWidth="1300.0" style="-fx-background-color: #192a56;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CourseFormController">
+<AnchorPane prefHeight="916.0" prefWidth="1300.0" style="-fx-background-color: #192a56;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ProgramFormController">
    <children>
       <Label layoutX="471.0" layoutY="14.0" text="Course Form" textFill="WHITE">
          <font>
@@ -20,12 +20,12 @@
       </Label>
       <AnchorPane layoutX="48.0" layoutY="99.0" prefHeight="805.0" prefWidth="1204.0" style="-fx-background-color: white;">
          <children>
-            <TableView fx:id="tblCourseCart" layoutX="38.0" layoutY="527.0" prefHeight="266.0" prefWidth="1129.0">
+            <TableView fx:id="tblProgramCart" layoutX="38.0" layoutY="527.0" prefHeight="266.0" prefWidth="1129.0">
                <columns>
-                  <TableColumn fx:id="colCourseId" prefWidth="179.0" text="Course Id" />
-                  <TableColumn fx:id="colCourseName" prefWidth="382.0" text="Course Name" />
-                  <TableColumn fx:id="colCourseDuration" prefWidth="277.0" text="Duration" />
-                  <TableColumn fx:id="colCourseFee" prefWidth="290.0" text="Fee (LKR)" />
+                  <TableColumn fx:id="colProgramId" prefWidth="179.0" text="Program Id" />
+                  <TableColumn fx:id="colProgramName" prefWidth="382.0" text="Program Name" />
+                  <TableColumn fx:id="colProgramDuration" prefWidth="277.0" text="Duration" />
+                  <TableColumn fx:id="colProgramFee" prefWidth="290.0" text="Fee (LKR)" />
                </columns>
             </TableView>
             <TextField layoutX="38.0" layoutY="465.0" prefHeight="43.0" prefWidth="322.0" promptText="Search NIC">
@@ -41,7 +41,7 @@
                   <Image url="@../../../../../../../icons8-search-100.png" />
                </image>
             </ImageView>
-            <TextField fx:id="txtCourseId" layoutX="422.0" layoutY="62.0" onAction="#txtCourseIdOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Course Id">
+            <TextField fx:id="txtProgramId" layoutX="422.0" layoutY="62.0" onAction="#txtProgramIdOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Program Id">
                <font>
                   <Font size="18.0" />
                </font>
@@ -49,7 +49,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <Label layoutX="422.0" layoutY="34.0" text="Course Id :">
+            <Label layoutX="422.0" layoutY="34.0" text="Program Id :">
                <font>
                   <Font size="18.0" />
                </font>
@@ -59,7 +59,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCourseFee" layoutX="422.0" layoutY="334.0" onAction="#txtCourseFeeOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Fee (LKR)">
+            <TextField fx:id="txtProgramFee" layoutX="422.0" layoutY="334.0" onAction="#txtProgramFeeOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Fee (LKR)">
                <font>
                   <Font size="18.0" />
                </font>
@@ -67,7 +67,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <TextField fx:id="txtCourseName" layoutX="422.0" layoutY="154.0" onAction="#txtCourseNameOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Enter Course Name">
+            <TextField fx:id="txtProgramName" layoutX="422.0" layoutY="154.0" onAction="#txtProgramNameOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Enter Program Name">
                <font>
                   <Font size="18.0" />
                </font>
@@ -75,12 +75,12 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <Label layoutX="422.0" layoutY="126.0" text="Course Name :">
+            <Label layoutX="422.0" layoutY="126.0" text="Program Name :">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCourseDuration" layoutX="422.0" layoutY="244.0" onAction="#txtCourseDurationOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Enter Duration">
+            <TextField fx:id="txtProgramDuration" layoutX="422.0" layoutY="244.0" onAction="#txtProgramDurationOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Enter Duration">
                <font>
                   <Font size="18.0" />
                </font>
