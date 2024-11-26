@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="916.0" prefWidth="1300.0" style="-fx-background-color: #192a56;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RegistrationFormController">
+   <children>
+      <Label layoutX="471.0" layoutY="14.0" text="Course Form" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="50.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="28.0" layoutY="99.0" prefHeight="500.0" prefWidth="752.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="67.0" layoutY="38.0" text="Register Id :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtStudentId" layoutX="67.0" layoutY="165.0" onAction="#txtStudentIdOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Enter Student Id">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="67.0" layoutY="137.0" text="Student Id :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtStudentName" layoutX="67.0" layoutY="264.0" onAction="#txtCourseDurationOnAction" prefHeight="43.0" prefWidth="322.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="67.0" layoutY="236.0" text="Student Name :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="imageRootNode" layoutX="484.0" layoutY="148.0" prefHeight="173.0" prefWidth="200.0" style="-fx-background-color: grey;">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="193.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <TextField fx:id="txtStudentTel" layoutX="67.0" layoutY="364.0" prefHeight="43.0" prefWidth="322.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="67.0" layoutY="336.0" text="Student Tel :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblRegisterId" layoutX="67.0" layoutY="66.0" prefHeight="43.0" prefWidth="322.0" text="  Label">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" layoutX="495.0" layoutY="37.0" prefHeight="28.0" prefWidth="184.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" layoutX="495.0" layoutY="77.0" prefHeight="28.0" prefWidth="184.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="815.0" layoutY="99.0" prefHeight="500.0" prefWidth="455.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="67.0" layoutY="38.0" text="Course Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCourseId" layoutX="67.0" layoutY="165.0" prefHeight="43.0" prefWidth="322.0" promptText="Enter Student Id">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="67.0" layoutY="137.0" text="Course Id :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="67.0" layoutY="236.0" text="Course Fee (Rs.) :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbCourseNames" layoutX="67.0" layoutY="66.0" onAction="#cmbCourseNameOnAction" prefHeight="43.0" prefWidth="322.0" />
+            <Label fx:id="lblCourseFee" layoutX="237.0" layoutY="230.0" prefHeight="34.0" prefWidth="150.0" text="  40000">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPayment" layoutX="67.0" layoutY="315.0" prefHeight="43.0" prefWidth="322.0" promptText="Enter Student Id">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="67.0" layoutY="287.0" text="Amount ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="158.0" layoutY="391.0" onAction="#btnAddOnAction" prefHeight="34.0" prefWidth="116.0" style="-fx-background-color: blue;" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblRegistrationCart" layoutX="27.0" layoutY="612.0" prefHeight="193.0" prefWidth="1245.0">
+         <columns>
+            <TableColumn fx:id="colCourseId" prefWidth="179.0" text="Course Id" />
+            <TableColumn fx:id="colCourseName" prefWidth="316.0" text="Course Name" />
+            <TableColumn fx:id="colCourseFee" prefWidth="223.0" text="Fee (LKR)" />
+            <TableColumn fx:id="colAmount" prefWidth="247.0" text="Amount" />
+            <TableColumn fx:id="colPay" prefWidth="247.0" text="Amount" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
