@@ -9,4 +9,6 @@ import java.util.List;
 
 public interface CourseDAO extends CrudDAO<Course> {
     List<Course> getAll() throws SQLException, ClassNotFoundException;
+
+    Course searchByName(String name);
 }

@@ -7,6 +7,7 @@ import lk.ijse.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,6 +28,19 @@ public class CourseDAOImpl implements CourseDAO {
         session.close();
 
         return courses;
+    }
+
+    @Override
+    public Course searchByName(String name) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction trancation = session.beginTransaction();
+
+        Query query = session.createQuery("from Course where courseId = ?1");
+        query.setParameter(1,name);
+        Course course = (Course) query.uniqueResult();
+        trancation.commit();
+        //session.close();
+        return course;
     }
 
     @Override

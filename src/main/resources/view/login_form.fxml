@@ -33,6 +33,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
+      <TextField fx:id="txtPasswordVisible" layoutX="211.0" layoutY="351.0" prefHeight="36.0" prefWidth="465.0" promptText="\@User Name" />
       <PasswordField fx:id="txtPassword" layoutX="211.0" layoutY="351.0" onAction="#txtPasswordOnAction" prefHeight="36.0" prefWidth="465.0" promptText="Password" />
       <JFXButton fx:id="btnLogin" layoutX="356.0" layoutY="429.0" onAction="#btnLoginOnAction" prefHeight="45.0" prefWidth="175.0" style="-fx-border-color: white; -fx-border-radius: 10px;" text="      Login" textFill="WHITE">
          <font>
@@ -66,6 +67,11 @@
       <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="381.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-login-96.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="26.0" layoutX="638.0" layoutY="355.0" onMouseClicked="#togglePasswordVisibility" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/eye.png" />
          </image>
       </ImageView>
    </children>

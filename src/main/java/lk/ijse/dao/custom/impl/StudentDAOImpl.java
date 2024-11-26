@@ -6,6 +6,7 @@ import lk.ijse.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,20 +31,6 @@ public class StudentDAOImpl implements StudentDAO {
 
         return students;
     }
-
-    /*@Override
-    public int getStudentCount() throws SQLException, ClassNotFoundException {
-        String sql = "SELECT COUNT(*) AS studentCount FROM Student";
-
-        Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        ResultSet resultSet = pstm.executeQuery();
-
-        if(resultSet.next()) {
-            return resultSet.getInt("customerCount");
-        }
-        return 0;
-    }*/
 
     @Override
     public boolean save(Student student) throws SQLException, ClassNotFoundException {
@@ -122,6 +109,19 @@ public class StudentDAOImpl implements StudentDAO {
         return "C001";*/
 
         return null;
+    }
+
+    @Override
+    public Student searchId(String id) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction trancation = session.beginTransaction();
+
+        Query query = session.createQuery("from Student where studentId = ?1");
+        query.setParameter(1,id);
+        Student student = (Student)query.uniqueResult();
+        trancation.commit();
+        //session.close();
+        return student;
     }
 
     @Override

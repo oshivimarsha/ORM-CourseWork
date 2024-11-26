@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -17,6 +18,7 @@ public class LoginFormController {
     public PasswordField txtPassword;
     public JFXButton btnLogin;
     public AnchorPane rootNode;
+    public TextField txtPasswordVisible;
 
     public void txtUserNameOnAction(ActionEvent actionEvent) {
 
@@ -65,6 +67,28 @@ public class LoginFormController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.setTitle("Update Username Password Form");
+    }
+
+    public void togglePasswordVisibility(MouseEvent mouseEvent) {
+        if (txtPasswordVisible.isVisible()) {
+            // Hide the visible TextField and show the PasswordField
+            txtPasswordVisible.setVisible(false);
+            txtPasswordVisible.setManaged(false);
+            txtPassword.setVisible(true);
+            txtPassword.setManaged(true);
+
+            // Copy text back to the PasswordField
+            txtPassword.setText(txtPasswordVisible.getText());
+        } else {
+            // Show the visible TextField and hide the PasswordField
+            txtPasswordVisible.setVisible(true);
+            txtPasswordVisible.setManaged(true);
+            txtPassword.setVisible(false);
+            txtPassword.setManaged(false);
+
+            // Copy text to the visible TextField
+            txtPasswordVisible.setText(txtPassword.getText());
+        }
     }
 }
 

@@ -49,4 +49,10 @@ public class CourseBOImpl implements CourseBO {
     public StudentDTO searchCourse(String id) throws SQLException, ClassNotFoundException {
         return null;
     }
+
+    @Override
+    public CourseDTO searchCourseByName(String name) {
+        Course course = courseDAO.searchByName(name);
+        return new CourseDTO(course.getCourseId(),course.getCourseName(),course.getCourseDuration(),course.getCourseFee());
+    }
 }
