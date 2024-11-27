@@ -14,6 +14,7 @@ import lk.ijse.bo.custom.ProgramBO;
 import lk.ijse.bo.custom.RegisterBO;
 import lk.ijse.bo.custom.StudentBO;
 import lk.ijse.dto.ProgramDTO;
+import lk.ijse.dto.RegisterDTO;
 import lk.ijse.dto.StudentDTO;
 import lk.ijse.view.CartTm;
 
@@ -41,6 +42,7 @@ public class RegistrationFormController {
     public TableColumn<?,?> colAmount;
     public TableColumn<?,?> colPay;
     public TableView<CartTm> tblRegistrationCart;
+    public DatePicker txtDate;
 
     StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENTBO);
     ProgramBO programBO = (ProgramBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.PROGRAMBO);
@@ -173,5 +175,25 @@ public class RegistrationFormController {
         CartTm tm = new CartTm(pId, pName, fee, payment, pay);
         obList.add(tm);
         tblRegistrationCart.setItems(obList);
+    }
+
+    public void btnRegisterOnAction(ActionEvent actionEvent) {
+        List<RegisterDTO> registerDTOList = new ArrayList<>();
+
+        for (CartTm cartTm : tblRegistrationCart.getItems()) {
+            RegisterDTO registerDTO = new RegisterDTO(
+                    //String.valueOf((Integer.parseInt(registrationBO.getCurrentRegistrationId())+1)),           // Registration ID
+                    txtStudentId.getText(),            // Student ID
+                    cartTm.getId(),                     // Program ID
+                    txtDate.getValue(),
+                    cartTm.getPayment(),        // Upfront Payment
+                    cartTm.getPay()// Date (formatted as String)
+            );
+
+            // Add each RegistrationDTO to the list
+            registerDTOList.add(registerDTO);
+        }
+
+        registerBO.placeRegister(registerDTOList);
     }
 }

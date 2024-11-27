@@ -55,4 +55,9 @@ public class ProgramBOImpl implements ProgramBO {
         Program program = programDAO.searchByName(name);
         return new ProgramDTO(program.getProgramId(),program.getProgramName(),program.getProgramDuration(),program.getProgramFee());
     }
+
+    @Override
+    public List<String> getProgramNamesByStudentId(String studentId) {
+        return programDAO.getProgramNamesByStudentId(studentId);
+    }
 }

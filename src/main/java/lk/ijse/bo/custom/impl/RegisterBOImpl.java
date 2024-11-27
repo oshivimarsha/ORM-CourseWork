@@ -30,10 +30,10 @@ public class RegisterBOImpl implements RegisterBO {
                 Student student = new Student();
                 student.setStudentId(registerDTO.getStuId());
 
-                Program course = new Program();
-                course.setProgramId(registerDTO.getCouId());
+                Program program = new Program();
+                program.setProgramId(registerDTO.getCouId());
 
-                Register register = new Register(/*registrationDTO.getRid(),*/student,course,registerDTO.getDate(),registerDTO.getPayment(),registerDTO.getAmountPay());
+                Register register = new Register(/*registrationDTO.getRid(),*/student,program,registerDTO.getDate(),registerDTO.getPayment(),registerDTO.getAmountPay());
                 registerList.add(register);
 
                 isSaved = registerDAO.saveRegister(registerList,session);

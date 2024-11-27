@@ -34,7 +34,7 @@ public class ProgramDAOImpl implements ProgramDAO {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction trancation = session.beginTransaction();
 
-        Query query = session.createQuery("from Program where programId = ?1");
+        Query query = session.createQuery("from Program where programName = ?1");
         query.setParameter(1,name);
         Program program = (Program) query.uniqueResult();
         trancation.commit();
@@ -92,6 +92,25 @@ public class ProgramDAOImpl implements ProgramDAO {
         session.close();
 
         return re;
+    }
+
+    public List<String> getProgramNamesByStudentId(String studentId) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        try {
+            // HQL Query
+            String hql = "SELECT r.program.programName " +
+                    "FROM Register r " +
+                    "WHERE r.student.studentId = :studentId";
+
+            Query<String> query = session.createQuery(hql);
+            query.setParameter("studentId", studentId);
+
+            return query.getResultList();
+        } finally {
+            session.close();
+        }
+
     }
 
     @Override

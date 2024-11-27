@@ -26,7 +26,7 @@ public class Register {
     private Student student;
 
     @ManyToOne
-    private Program course;
+    private Program program;
 
     private LocalDate date;
     private double payment;
@@ -34,7 +34,7 @@ public class Register {
 
     public Register(Student student, Program program, LocalDate date, double payment, double amountPay) {
         this.student = student;
-        this.course = program;
+        this.program = program;
         this.date = date;
         this.payment = payment;
         this.amountPay = amountPay;
