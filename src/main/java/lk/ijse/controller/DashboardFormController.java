@@ -25,21 +25,10 @@ public class DashboardFormController {
     DashboardBO dashboardBO = (DashboardBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.DASHBOARDBO);
 
     public void initialize() {
-
-
-        setDate();
-        setTime();
+        setStudentCount(studentCount);
     }
 
-    private void setDate() {
-        LocalDate now = LocalDate.now();
-        lblDate.setText(String.valueOf(now));
-    }
 
-    private void setTime() {
-        LocalTime now = LocalTime.now();
-        lblTime.setText(String.valueOf(now));
-    }
 
     private void setStudentCount(int studentCount) {
         lblStudentCount.setText(String.valueOf(studentCount));

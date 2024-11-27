@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.bo.BOFactory;
+import lk.ijse.bo.custom.LoginBO;
 
 import java.io.IOException;
 
@@ -19,6 +21,8 @@ public class LoginFormController {
     public JFXButton btnLogin;
     public AnchorPane rootNode;
     public TextField txtPasswordVisible;
+
+    LoginBO loginBO = (LoginBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.LOGINBO);
 
     public void txtUserNameOnAction(ActionEvent actionEvent) {
 

@@ -8,14 +8,34 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class SidepannelController {
     public AnchorPane rootNode;
     public Label lblUserName;
     public AnchorPane childRootNode;
+    public Label lblDate;
+    public Label lblTime;
 
-    public void setUserName(String userName) {
+    public void initialize() throws IOException {
+        loadDashBoard();
+        setDate();
+        setTime();
+    }
+
+    public void setUserName(String userName){
         lblUserName.setText(userName);
+    }
+
+    private void setDate() {
+        LocalDate now = LocalDate.now();
+        lblDate.setText(String.valueOf(now));
+    }
+
+    private void setTime() {
+        LocalTime now = LocalTime.now();
+        lblTime.setText(String.valueOf(now));
     }
 
     public void btnLogoutOnAction(ActionEvent actionEvent) throws IOException {
@@ -27,11 +47,6 @@ public class SidepannelController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.setTitle("Login Form");
-    }
-
-
-    public void initialize() throws IOException {
-        loadDashBoard();
     }
 
     private void loadDashBoard() throws IOException {
@@ -70,4 +85,9 @@ public class SidepannelController {
         childRootNode.getChildren().add(userPane);
     }
 
+    public void btnPayment(ActionEvent actionEvent) throws IOException {
+        AnchorPane paymentPane = FXMLLoader.load(this.getClass().getResource("/view/payment_form.fxml"));
+        childRootNode.getChildren().clear();
+        childRootNode.getChildren().add(paymentPane);
+    }
 }

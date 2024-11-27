@@ -53,8 +53,6 @@ public class RegistrationFormController {
         getProgramNames();
         setCellValueFactory();
         getCurrentRegisterId();
-        setDate();
-        setTime();
     }
 
     private void setCellValueFactory() {
@@ -135,16 +133,6 @@ public class RegistrationFormController {
 
     public void txtProgramNameOnAction(ActionEvent actionEvent) {
 
-    }
-
-    private void setDate() {
-        LocalDate now = LocalDate.now();
-        lblDate.setText(String.valueOf(now));
-    }
-
-    private void setTime() {
-        LocalTime now = LocalTime.now();
-        lblTime.setText(String.valueOf(now));
     }
 
     public void cmbProgramNameOnAction(ActionEvent actionEvent) {
