@@ -114,6 +114,20 @@ public class ProgramDAOImpl implements ProgramDAO {
     }
 
     @Override
+    public int getProgramCount() throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        String hql = "SELECT COUNT(*) FROM Program";
+
+        try {
+            Query query = session.createQuery(hql);
+            Long count = (Long) query.uniqueResult();
+            return count != null ? count.intValue() : 0;
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
         Session session = FactoryConfiguration.getInstance().getSession();
         String hql = "SELECT MAX(CAST(SUBSTRING(p.programId, 3) AS integer)) FROM Program p";

@@ -120,10 +120,10 @@ public class StudentDAOImpl implements StudentDAO {
 
         try {
             Query query = session.createQuery(hql);
-            Long count = (Long) query.uniqueResult(); // COUNT returns a Long in Hibernate
-            return count != null ? count.intValue() : 0; // Convert Long to int
+            Long count = (Long) query.uniqueResult();
+            return count != null ? count.intValue() : 0;
         } finally {
-            session.close(); // Ensure session is closed to prevent memory leaks
+            session.close();
         }
     }
 

@@ -29,6 +29,20 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public int getUserCount() throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        String hql = "SELECT COUNT(*) FROM User ";
+
+        try {
+            Query query = session.createQuery(hql);
+            Long count = (Long) query.uniqueResult();
+            return count != null ? count.intValue() : 0;
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
     public boolean save(User user) throws SQLException, ClassNotFoundException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();

@@ -26,7 +26,7 @@
                   <Font name="System Bold" size="34.0" />
                </font>
             </Label>
-            <Label fx:id="lblStudentCount" layoutX="72.0" layoutY="111.0" prefHeight="47.0" prefWidth="79.0" text="10">
+            <Label fx:id="lblStudentCount" layoutX="72.0" layoutY="111.0" prefHeight="47.0" prefWidth="79.0">
                <font>
                   <Font name="System Bold" size="39.0" />
                </font>
@@ -41,12 +41,12 @@
       </Pane>
       <Pane layoutX="455.0" layoutY="118.0" prefHeight="237.0" prefWidth="390.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="52.0" layoutY="28.0" prefHeight="41.0" prefWidth="287.0" text="Course Count">
+            <Label layoutX="34.0" layoutY="30.0" prefHeight="41.0" prefWidth="323.0" text="Program Count">
                <font>
                   <Font name="System Bold" size="34.0" />
                </font>
             </Label>
-            <Label fx:id="lblCourseCount" layoutX="72.0" layoutY="111.0" prefHeight="47.0" prefWidth="79.0" text="10">
+            <Label fx:id="lblProgramCount" layoutX="72.0" layoutY="111.0" prefHeight="47.0" prefWidth="79.0">
                <font>
                   <Font name="System Bold" size="39.0" />
                </font>
@@ -66,7 +66,7 @@
                   <Font name="System Bold" size="34.0" />
                </font>
             </Label>
-            <Label fx:id="lblUserCount" layoutX="72.0" layoutY="111.0" prefHeight="47.0" prefWidth="79.0" text="10">
+            <Label fx:id="lblUserCount" layoutX="72.0" layoutY="111.0" prefHeight="47.0" prefWidth="79.0">
                <font>
                   <Font name="System Bold" size="39.0" />
                </font>
