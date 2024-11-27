@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="916.0" prefWidth="1300.0" style="-fx-background-color: #192a56;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentFormController">
    <children>
-      <Label layoutX="424.0" layoutY="14.0" text="Student Form" textFill="WHITE">
+      <Label layoutX="424.0" layoutY="14.0" style="-fx-background-color: #192a56;" styleClass="table-view" stylesheets="@../css/tableView.css" text="Student Form" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="50.0" />
          </font>
