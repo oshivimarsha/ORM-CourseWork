@@ -47,7 +47,7 @@ public class ProgramFormController {
     public void initialize() {
         loadAllProgram();
         setCellValueFactory();
-       // getCurrentId();
+        getCurrentId();
 
     }
 
@@ -185,6 +185,31 @@ public class ProgramFormController {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
         }
+    }
+
+    private void getCurrentId() {
+        try {
+            String currentId = programBO.generateNewID();
+            String nextProgramId = generateNextProgramId(currentId);
+            txtProgramId.setText(nextProgramId);
+
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+    private String generateNextProgramId(String currentId) {
+        if(currentId != null) {
+            /*String[] split = currentId.split("S-");  //" ", "2"
+            int idNum = Integer.parseInt(split[1]);*/
+            int idNum = Integer.parseInt(currentId);
+            return "Pro-0" + ++idNum;
+        }
+        return "Pro-01";
     }
 
     @FXML

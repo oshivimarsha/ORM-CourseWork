@@ -86,29 +86,18 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public String generateNewID() {
-        /*Session session = FactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
+        Session session = FactoryConfiguration.getInstance().getSession();
+        String hql = "SELECT MAX(CAST(SUBSTRING(s.studentId, 3) AS integer)) FROM Student s";
 
-        Object query3 = session.createNativeQuery("SELECT studentId FROM Student ORDER BY CAST(SUBSTRING(studentId, 2) AS UNSIGNED) DESC LIMIT 1").uniqueResult();
-
-        if (query3 != null) {
-            String id = query3.toString();
-            String[] split = id.split("C");
-            int idNum = Integer.parseInt(split[1]);
-
-            if(idNum >= 1){
-                return "C" + 0 + 0 + ++idNum;
-            }else if(idNum >= 9){
-                return "C" + 0 + ++idNum;
-            } else if(idNum >= 99){
-                return "C" + ++idNum;
-            }
+        Query query = session.createQuery(hql);
+        Integer id = (Integer) query.uniqueResult();
+        if(id == null){
+            return null;
+        }else {
+            String currentId = id.toString();
+            System.out.println(currentId);
+            return currentId;
         }
-        transaction.commit();
-        session.close();
-        return "C001";*/
-
-        return null;
     }
 
     @Override
@@ -123,6 +112,21 @@ public class StudentDAOImpl implements StudentDAO {
         //session.close();
         return student;
     }
+
+    @Override
+    public int getStudentCount() throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        String hql = "SELECT COUNT(*) FROM Student";
+
+        try {
+            Query query = session.createQuery(hql);
+            Long count = (Long) query.uniqueResult(); // COUNT returns a Long in Hibernate
+            return count != null ? count.intValue() : 0; // Convert Long to int
+        } finally {
+            session.close(); // Ensure session is closed to prevent memory leaks
+        }
+    }
+
 
     @Override
     public Student search(String id) throws SQLException, ClassNotFoundException {

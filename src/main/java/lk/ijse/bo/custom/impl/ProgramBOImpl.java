@@ -42,7 +42,7 @@ public class ProgramBOImpl implements ProgramBO {
 
     @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
-        return null;
+        return programDAO.generateNewID();
     }
 
     @Override

@@ -80,7 +80,7 @@ public class UserFormController {
     public void initialize() {
         loadAllUser();
         setCellValueFactory();
-        // getCurrentId();
+        getCurrentId();
 
     }
 
@@ -240,6 +240,31 @@ public class UserFormController {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
         }
+    }
+
+    private void getCurrentId() {
+        try {
+            String currentId = userBO.generateNewID();
+            String nextUserId = generateNextUserId(currentId);
+            txtId.setText(nextUserId);
+
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+    private String generateNextUserId(String currentId) {
+        if(currentId != null) {
+            /*String[] split = currentId.split("S-");  //" ", "2"
+            int idNum = Integer.parseInt(split[1]);*/
+            int idNum = Integer.parseInt(currentId);
+            return "User-0" + ++idNum;
+        }
+        return "User-01";
     }
 
 }

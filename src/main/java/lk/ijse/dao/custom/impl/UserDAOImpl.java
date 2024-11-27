@@ -6,6 +6,7 @@ import lk.ijse.entity.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -81,7 +82,18 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        String hql = "SELECT MAX(CAST(SUBSTRING(u.userId, 3) AS integer)) FROM User u";
+
+        Query query = session.createQuery(hql);
+        Integer id = (Integer) query.uniqueResult();
+        if(id == null){
+            return null;
+        }else {
+            String currentId = id.toString();
+            System.out.println(currentId);
+            return currentId;
+        }
     }
 
     @Override

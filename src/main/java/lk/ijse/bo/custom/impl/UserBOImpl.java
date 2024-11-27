@@ -43,7 +43,7 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
-        return null;
+        return userDAO.generateNewID();
     }
 
     @Override

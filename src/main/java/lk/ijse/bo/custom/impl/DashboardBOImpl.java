@@ -9,4 +9,8 @@ import java.sql.SQLException;
 public class DashboardBOImpl implements DashboardBO {
     StudentDAO studentDAO = (StudentDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.STUDENTDAO);
 
+    @Override
+    public int getStudentCount() throws SQLException, ClassNotFoundException {
+        return studentDAO.getStudentCount();
+    }
 }

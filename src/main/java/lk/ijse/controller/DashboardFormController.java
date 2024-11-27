@@ -25,6 +25,13 @@ public class DashboardFormController {
     DashboardBO dashboardBO = (DashboardBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.DASHBOARDBO);
 
     public void initialize() {
+        try {
+            studentCount = dashboardBO.getStudentCount();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         setStudentCount(studentCount);
     }
 
