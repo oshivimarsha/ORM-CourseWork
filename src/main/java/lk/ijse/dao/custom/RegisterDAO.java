@@ -8,6 +8,5 @@ import java.util.List;
 
 public interface RegisterDAO extends CrudDAO<Register> {
     boolean saveRegister(List<Register> registerList, Session session);
-
     int getCurrentId();
 }

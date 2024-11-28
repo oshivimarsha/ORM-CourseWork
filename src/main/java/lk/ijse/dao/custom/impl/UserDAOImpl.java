@@ -42,6 +42,30 @@ public class UserDAOImpl implements UserDAO {
         }
     }
 
+    /*@Override
+    public User searchByName(String userNameText) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        try {
+
+            Transaction transaction = session.beginTransaction();
+
+            Query query = session.createQuery("FROM User WHERE userName=?");
+            query.setParameter("userName", userNameText);
+            User user = (User) query.uniqueResult();
+            if (user != null) {
+                return user;
+            }else{
+
+                return null;
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            session.close();
+        }
+    }*/
+
     @Override
     public boolean save(User user) throws SQLException, ClassNotFoundException {
         Session session = FactoryConfiguration.getInstance().getSession();

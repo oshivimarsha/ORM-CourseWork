@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="916.0" prefWidth="1300.0" style="-fx-background-color: #192a56;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.PaymentFormController">
    <children>
@@ -12,5 +16,140 @@
             <Font name="System Bold Italic" size="50.0" />
          </font>
       </Label>
+      <AnchorPane layoutX="48.0" layoutY="99.0" prefHeight="805.0" prefWidth="1204.0" style="-fx-background-color: white;">
+         <children>
+            <TextField fx:id="txtStudentId" layoutX="102.0" layoutY="194.0" onAction="#txtStudentIdOnAction" prefHeight="43.0" prefWidth="322.0" promptText="Student Id">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="102.0" layoutY="166.0" text="Student Id :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="102.0" layoutY="438.0" text="Program Name :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtStudentName" layoutX="102.0" layoutY="286.0" prefHeight="43.0" prefWidth="322.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="102.0" layoutY="258.0" text="Student Name :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtStudentTel" layoutX="102.0" layoutY="376.0" prefHeight="43.0" prefWidth="322.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="102.0" layoutY="348.0" text="Student Tel :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="528.0" layoutY="731.0" onAction="#btnPayOnAction" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: blue;" text="Pay" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="462.0" layoutY="39.0" prefHeight="35.0" prefWidth="120.0" text="Payment Id :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPaymentId" layoutX="582.0" layoutY="39.0" prefHeight="35.0" prefWidth="111.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePicker" layoutX="582.0" layoutY="89.0" onAction="#getDateOnAction" prefHeight="35.0" prefWidth="211.0" />
+            <Label layoutX="462.0" layoutY="89.0" prefHeight="35.0" prefWidth="120.0" text="Date           :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbProgramName" layoutX="102.0" layoutY="466.0" onAction="#cmbProgramNameOnAction" prefHeight="43.0" prefWidth="322.0" />
+            <TextField fx:id="txtProgramFee" layoutX="772.0" layoutY="194.0" prefHeight="43.0" prefWidth="322.0" promptText="Student Id">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="772.0" layoutY="166.0" text="Program Fee :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="772.0" layoutY="438.0" text="Balance :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUpFrontPayment" layoutX="772.0" layoutY="286.0" prefHeight="43.0" prefWidth="322.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="772.0" layoutY="258.0" text="Upfront Payment :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTotalPaid" layoutX="772.0" layoutY="376.0" prefHeight="43.0" prefWidth="322.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="772.0" layoutY="348.0" text="Total Paid :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtBalance" layoutX="772.0" layoutY="466.0" prefHeight="43.0" prefWidth="322.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <TextField fx:id="txtPayingAmount" layoutX="772.0" layoutY="556.0" prefHeight="43.0" prefWidth="322.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="772.0" layoutY="528.0" text="Paying Amount :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

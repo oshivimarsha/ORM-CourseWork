@@ -12,7 +12,7 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        STUDENTBO, PROGRAMBO, USERBO, REJISTERBO, DASHBOARDBO, LOGINBO
+        STUDENTBO, PROGRAMBO, USERBO, REJISTERBO, DASHBOARDBO, LOGINBO, PAYMENTBO
     }
 
     public SuperBO getBO (BOTypes boTypes) {
@@ -29,6 +29,8 @@ public class BOFactory {
                 return new RegisterBOImpl();
             case LOGINBO:
                 return new LoginBOImpl();
+            case PAYMENTBO:
+                return new PaymentBOImpl();
             default:
                 return null;
         }

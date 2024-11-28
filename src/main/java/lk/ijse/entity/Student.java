@@ -30,6 +30,10 @@ public class Student {
     private String studentGender;
     private String path;
 
-  //  @OneToMany(mappedBy = "student")
- //   List<Rejister> registrationList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY )
+    List<Register> registrationList;
+
+
+
 }

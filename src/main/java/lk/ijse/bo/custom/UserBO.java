@@ -3,6 +3,7 @@ package lk.ijse.bo.custom;
 import lk.ijse.bo.SuperBO;
 import lk.ijse.dto.StudentDTO;
 import lk.ijse.dto.UserDTO;
+import lk.ijse.entity.User;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -14,4 +15,6 @@ public interface UserBO extends SuperBO {
     boolean deleteUser(String id) throws SQLException, ClassNotFoundException;
     String generateNewID() throws SQLException, ClassNotFoundException;
     StudentDTO searchUser(String id) throws SQLException, ClassNotFoundException;
+
+  //  User searchUserbyName(String userNameText);
 }

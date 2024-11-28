@@ -2,12 +2,15 @@ package lk.ijse.dao.custom.impl;
 
 import lk.ijse.config.FactoryConfiguration;
 import lk.ijse.dao.custom.ProgramDAO;
+import lk.ijse.entity.Custom;
 import lk.ijse.entity.Program;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -125,6 +128,11 @@ public class ProgramDAOImpl implements ProgramDAO {
         } finally {
             session.close();
         }
+    }
+
+    @Override
+    public List<Custom> getMostProgram() {
+        return null;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package lk.ijse.dao.custom;
 
 import lk.ijse.dao.CrudDAO;
+import lk.ijse.entity.Custom;
 import lk.ijse.entity.Program;
 
 import java.sql.SQLException;
@@ -13,4 +14,6 @@ public interface ProgramDAO extends CrudDAO<Program> {
     List<String> getProgramNamesByStudentId(String studentId);
 
     int getProgramCount() throws SQLException, ClassNotFoundException;
+
+    List<Custom> getMostProgram();
 }

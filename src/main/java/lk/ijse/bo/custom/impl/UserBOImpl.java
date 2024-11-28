@@ -50,4 +50,9 @@ public class UserBOImpl implements UserBO {
     public StudentDTO searchUser(String id) throws SQLException, ClassNotFoundException {
         return null;
     }
+
+   /* @Override
+    public User searchUserbyName(String userNameText) {
+        return userDAO.searchByName(userNameText);
+    }*/
 }

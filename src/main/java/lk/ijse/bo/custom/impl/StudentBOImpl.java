@@ -27,12 +27,12 @@ public class StudentBOImpl implements StudentBO {
 
     @Override
     public boolean saveStudent(StudentDTO studentDTO) throws SQLException, ClassNotFoundException {
-        return studentDAO.save(new Student(studentDTO.getStudentId(), studentDTO.getStudentFullName(), studentDTO.getStudentEmail(), studentDTO.getStudentContact(),studentDTO.getStudentNIC(), studentDTO.getStudentAddress(), studentDTO.getStudentDOB(), studentDTO.getStudentAge(), studentDTO.getStudentGender(), studentDTO.getStudentPath()));
+        return studentDAO.save(new Student(studentDTO.getStudentId(), studentDTO.getStudentFullName(), studentDTO.getStudentEmail(), studentDTO.getStudentContact(),studentDTO.getStudentNIC(), studentDTO.getStudentAddress(), studentDTO.getStudentDOB(), studentDTO.getStudentAge(), studentDTO.getStudentGender(), studentDTO.getStudentPath(), null));
     }
 
     @Override
     public boolean updateStudent(StudentDTO studentDTO) throws SQLException, ClassNotFoundException {
-        return studentDAO.update(new Student(studentDTO.getStudentId(), studentDTO.getStudentFullName(), studentDTO.getStudentEmail(), studentDTO.getStudentContact(),studentDTO.getStudentNIC(), studentDTO.getStudentAddress(), studentDTO.getStudentDOB(), studentDTO.getStudentAge(), studentDTO.getStudentGender(), studentDTO.getStudentPath()));
+        return studentDAO.update(new Student(studentDTO.getStudentId(), studentDTO.getStudentFullName(), studentDTO.getStudentEmail(), studentDTO.getStudentContact(),studentDTO.getStudentNIC(), studentDTO.getStudentAddress(), studentDTO.getStudentDOB(), studentDTO.getStudentAge(), studentDTO.getStudentGender(), studentDTO.getStudentPath(), null));
     }
 
     @Override

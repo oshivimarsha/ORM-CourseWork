@@ -27,12 +27,12 @@ public class ProgramBOImpl implements ProgramBO {
 
     @Override
     public boolean saveProgram(ProgramDTO programDTO) throws SQLException, ClassNotFoundException {
-        return programDAO.save(new Program(programDTO.getProgramId(), programDTO.getProgramName(), programDTO.getProgramDuration(), programDTO.getProgramFee()));
+        return programDAO.save(new Program(programDTO.getProgramId(), programDTO.getProgramName(), programDTO.getProgramDuration(), programDTO.getProgramFee(), null));
     }
 
     @Override
     public boolean updateProgram(ProgramDTO programDTO) throws SQLException, ClassNotFoundException {
-        return programDAO.update(new Program(programDTO.getProgramId(), programDTO.getProgramName(), programDTO.getProgramDuration(), programDTO.getProgramFee()));
+        return programDAO.update(new Program(programDTO.getProgramId(), programDTO.getProgramName(), programDTO.getProgramDuration(), programDTO.getProgramFee(), null));
     }
 
     @Override

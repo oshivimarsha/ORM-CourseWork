@@ -20,4 +20,8 @@ public class User {
     private String userEmail;
     private String userPosition;
     private String userPassword;
+
+    public String getPosition() {
+        return userPosition;
+    }
 }

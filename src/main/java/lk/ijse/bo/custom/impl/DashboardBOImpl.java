@@ -6,8 +6,12 @@ import lk.ijse.dao.DAOFactory;
 import lk.ijse.dao.custom.ProgramDAO;
 import lk.ijse.dao.custom.StudentDAO;
 import lk.ijse.dao.custom.UserDAO;
+import lk.ijse.dto.CustomDTO;
+import lk.ijse.entity.Custom;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DashboardBOImpl implements DashboardBO {
     StudentDAO studentDAO = (StudentDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.STUDENTDAO);
@@ -27,5 +31,10 @@ public class DashboardBOImpl implements DashboardBO {
     @Override
     public int getUserCount() throws SQLException, ClassNotFoundException {
         return userDAO.getUserCount();
+    }
+
+    @Override
+    public List<CustomDTO> getMostProgram() throws SQLException, ClassNotFoundException {
+        return null;
     }
 }

@@ -4,7 +4,9 @@ import javafx.scene.control.Alert;
 import lk.ijse.bo.custom.RegisterBO;
 import lk.ijse.config.FactoryConfiguration;
 import lk.ijse.dao.DAOFactory;
+import lk.ijse.dao.custom.ProgramDAO;
 import lk.ijse.dao.custom.RegisterDAO;
+import lk.ijse.dto.ProgramDTO;
 import lk.ijse.dto.RegisterDTO;
 import lk.ijse.entity.Program;
 import lk.ijse.entity.Register;
@@ -17,6 +19,7 @@ import java.util.List;
 
 public class RegisterBOImpl implements RegisterBO {
     RegisterDAO registerDAO = (RegisterDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.REGISTERDAO);
+    ProgramDAO programDAO = (ProgramDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.PROGRAMDAO);
     @Override
     public void placeRegister(List<RegisterDTO> registerDTOList) {
         Session session = FactoryConfiguration.getInstance().getSession();
@@ -42,7 +45,7 @@ public class RegisterBOImpl implements RegisterBO {
 
             if (isSaved) {
                 transaction.commit();
-                new Alert(Alert.AlertType.CONFIRMATION,"transaction completed").show();
+                new Alert(Alert.AlertType.CONFIRMATION,"register completed").show();
             }
 
         }catch (Exception e){
@@ -56,5 +59,10 @@ public class RegisterBOImpl implements RegisterBO {
     @Override
     public int getCurrentRegisterId() {
         return registerDAO.getCurrentId();
+    }
+
+    @Override
+    public RegisterDTO searchProgramByName(String name) {
+        return null;
     }
 }

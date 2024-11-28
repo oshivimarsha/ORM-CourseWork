@@ -60,15 +60,15 @@ public class DashboardFormController {
 
     private void barChart() {
         XYChart.Series series1 = new XYChart.Series();
-        series1.setName("GDSE");
+        series1.setName("Student Count  ");
         series1.getData().add(new XYChart.Data("GDSE",studentCount));
 
         XYChart.Series series2 = new XYChart.Series();
-        series2.setName("CMJD");
+        series2.setName("Program Count    ");
         series2.getData().add(new XYChart.Data("CMJD",programCount));
 
         XYChart.Series series3 = new XYChart.Series();
-        series3.setName("DEP");
+        series3.setName("User Count  ");
         series3.getData().add(new XYChart.Data("DEP",userCount));
 
         barChart.getData().addAll(series1, series2, series3);

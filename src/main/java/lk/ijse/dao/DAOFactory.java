@@ -12,7 +12,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        STUDENTDAO, PROGRAMDAO, USERDAO, DASHBOARDDAO, REGISTERDAO, LOGINDAO
+        STUDENTDAO, PROGRAMDAO, USERDAO, DASHBOARDDAO, REGISTERDAO, LOGINDAO, PAYMENTDAO, QUERYDAO
     }
 
     public SuperDAO getDAO(DAOTypes daoTypes){
@@ -29,6 +29,10 @@ public class DAOFactory {
                 return new RegisterDAOImpl();
             case LOGINDAO:
                 return new LoginDAOImpl();
+            case PAYMENTDAO:
+                return new PaymentDAOImpl();
+            case QUERYDAO:
+                return new QueryDAOImpl();
             default:
                 return null;
         }
