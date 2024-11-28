@@ -1,5 +1,8 @@
 package lk.ijse.controller;
 
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import lk.ijse.bo.BOFactory;
@@ -13,6 +16,7 @@ public class DashboardFormController {
     public Label lblStudentCount;
     public Label lblUserCount;
     public Label lblProgramCount;
+    public BarChart<?,?> barChart;
 
 
     private int studentCount;
@@ -50,8 +54,25 @@ public class DashboardFormController {
             throw new RuntimeException(e);
         }
         setUserCount(userCount);
+
+        barChart();
     }
 
+    private void barChart() {
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName("GDSE");
+        series1.getData().add(new XYChart.Data("GDSE",studentCount));
+
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName("CMJD");
+        series2.getData().add(new XYChart.Data("CMJD",programCount));
+
+        XYChart.Series series3 = new XYChart.Series();
+        series3.setName("DEP");
+        series3.getData().add(new XYChart.Data("DEP",userCount));
+
+        barChart.getData().addAll(series1, series2, series3);
+    }
 
 
     private void setStudentCount(int studentCount) {
@@ -65,7 +86,5 @@ public class DashboardFormController {
     private void setUserCount(int userCount) {
         lblUserCount.setText(String.valueOf(userCount));
     }
-
-
 
 }

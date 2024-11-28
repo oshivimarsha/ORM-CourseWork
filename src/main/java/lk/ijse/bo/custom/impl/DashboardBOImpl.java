@@ -1,5 +1,6 @@
 package lk.ijse.bo.custom.impl;
 
+import javafx.scene.chart.XYChart;
 import lk.ijse.bo.custom.DashboardBO;
 import lk.ijse.dao.DAOFactory;
 import lk.ijse.dao.custom.ProgramDAO;
